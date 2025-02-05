@@ -58,5 +58,5 @@ public class RectangleAvecPoint {
         this.centre.setX(centreX);
         this.centre.setY(centreY);
     }
-//Ceci est une modificcation
+//Ceci est une modification oups
 }
