@@ -51,4 +51,23 @@ public class Point {
             return distance;
         }
 
+    public void deplacer(double distanceX, double distanceY) {
+        x += distanceX;
+        y += distanceY;
+    }
+
+    public void tourner(double centerX, double centerY, double cosTheta, double sinTheta) {
+        // 1. Translation au centre
+        double translatedX = x - centerX;
+        double translatedY = y - centerY;
+
+        // 2. Rotation
+        double rotatedX = translatedX * cosTheta - translatedY * sinTheta;
+        double rotatedY = translatedX * sinTheta + translatedY * cosTheta;
+
+        // 3. Retour à la position originale + arrondi
+        x = Math.round((rotatedX + centerX) * 100.0) / 100.0;
+        y = Math.round((rotatedY + centerY) * 100.0) / 100.0;
+    }
+
     }
